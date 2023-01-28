@@ -13,7 +13,10 @@ namespace Aplikacija.SistemskeOperacije
 
         protected override void ExecuteSpecificOperation()
         {
-            Result = repository.Add(i);
+            if (!string.IsNullOrEmpty(i.Nadimak) && i.Starost > 12)
+                Result = repository.Add(i);
+            else
+                Result = false;
         }
     }
 }

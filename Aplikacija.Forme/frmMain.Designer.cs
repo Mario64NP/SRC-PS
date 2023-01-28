@@ -51,6 +51,9 @@
             this.btnRezultatDodaj = new System.Windows.Forms.Button();
             this.btnRezultatPretrazi = new System.Windows.Forms.Button();
             this.dgvRezultati = new System.Windows.Forms.DataGridView();
+            this.txtPlayersSearch = new System.Windows.Forms.TextBox();
+            this.txtGamesSearch = new System.Windows.Forms.TextBox();
+            this.txtResultsSearch = new System.Windows.Forms.TextBox();
             this.tcTabs.SuspendLayout();
             this.tpIgraci.SuspendLayout();
             this.pnlButtonsPanelIgraci.SuspendLayout();
@@ -89,6 +92,7 @@
             // 
             // pnlButtonsPanelIgraci
             // 
+            this.pnlButtonsPanelIgraci.Controls.Add(this.txtPlayersSearch);
             this.pnlButtonsPanelIgraci.Controls.Add(this.btnIgracIzmeni);
             this.pnlButtonsPanelIgraci.Controls.Add(this.btnIgracObrisi);
             this.pnlButtonsPanelIgraci.Controls.Add(this.btnIgracDodaj);
@@ -108,7 +112,6 @@
             this.btnIgracIzmeni.TabIndex = 3;
             this.btnIgracIzmeni.Text = "Izmeni";
             this.btnIgracIzmeni.UseVisualStyleBackColor = true;
-            this.btnIgracIzmeni.Click += new System.EventHandler(this.btnIgracIzmeni_Click);
             // 
             // btnIgracObrisi
             // 
@@ -119,29 +122,26 @@
             this.btnIgracObrisi.TabIndex = 4;
             this.btnIgracObrisi.Text = "Obriši";
             this.btnIgracObrisi.UseVisualStyleBackColor = true;
-            this.btnIgracObrisi.Click += new System.EventHandler(this.btnIgracObrisi_Click);
             // 
             // btnIgracDodaj
             // 
             this.btnIgracDodaj.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnIgracDodaj.Location = new System.Drawing.Point(150, 7);
+            this.btnIgracDodaj.Location = new System.Drawing.Point(255, 7);
             this.btnIgracDodaj.Name = "btnIgracDodaj";
             this.btnIgracDodaj.Size = new System.Drawing.Size(100, 25);
             this.btnIgracDodaj.TabIndex = 1;
             this.btnIgracDodaj.Text = "Dodaj";
             this.btnIgracDodaj.UseVisualStyleBackColor = true;
-            this.btnIgracDodaj.Click += new System.EventHandler(this.btnIgracDodaj_Click);
             // 
             // btnIgracPretrazi
             // 
-            this.btnIgracPretrazi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnIgracPretrazi.Location = new System.Drawing.Point(255, 7);
+            this.btnIgracPretrazi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnIgracPretrazi.Location = new System.Drawing.Point(111, 7);
             this.btnIgracPretrazi.Name = "btnIgracPretrazi";
             this.btnIgracPretrazi.Size = new System.Drawing.Size(100, 25);
             this.btnIgracPretrazi.TabIndex = 2;
             this.btnIgracPretrazi.Text = "Pretraži";
             this.btnIgracPretrazi.UseVisualStyleBackColor = true;
-            this.btnIgracPretrazi.Click += new System.EventHandler(this.btnIgracPretrazi_Click);
             // 
             // dgvIgraci
             // 
@@ -157,7 +157,6 @@
             this.dgvIgraci.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvIgraci.Size = new System.Drawing.Size(570, 326);
             this.dgvIgraci.TabIndex = 0;
-            this.dgvIgraci.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvIgraci_CellClick);
             // 
             // tpVideoIgre
             // 
@@ -173,6 +172,7 @@
             // 
             // pnlButtonsPanelVideoIgre
             // 
+            this.pnlButtonsPanelVideoIgre.Controls.Add(this.txtGamesSearch);
             this.pnlButtonsPanelVideoIgre.Controls.Add(this.btnVideoIgraIzmeni);
             this.pnlButtonsPanelVideoIgre.Controls.Add(this.btnVideoIgraObrisi);
             this.pnlButtonsPanelVideoIgre.Controls.Add(this.btnVideoIgraDodaj);
@@ -192,7 +192,6 @@
             this.btnVideoIgraIzmeni.TabIndex = 7;
             this.btnVideoIgraIzmeni.Text = "Izmeni";
             this.btnVideoIgraIzmeni.UseVisualStyleBackColor = true;
-            this.btnVideoIgraIzmeni.Click += new System.EventHandler(this.btnVideoIgraIzmeni_Click);
             // 
             // btnVideoIgraObrisi
             // 
@@ -203,29 +202,26 @@
             this.btnVideoIgraObrisi.TabIndex = 8;
             this.btnVideoIgraObrisi.Text = "Obriši";
             this.btnVideoIgraObrisi.UseVisualStyleBackColor = true;
-            this.btnVideoIgraObrisi.Click += new System.EventHandler(this.btnVideoIgraObrisi_Click);
             // 
             // btnVideoIgraDodaj
             // 
             this.btnVideoIgraDodaj.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnVideoIgraDodaj.Location = new System.Drawing.Point(150, 7);
+            this.btnVideoIgraDodaj.Location = new System.Drawing.Point(255, 7);
             this.btnVideoIgraDodaj.Name = "btnVideoIgraDodaj";
             this.btnVideoIgraDodaj.Size = new System.Drawing.Size(100, 25);
             this.btnVideoIgraDodaj.TabIndex = 5;
             this.btnVideoIgraDodaj.Text = "Dodaj";
             this.btnVideoIgraDodaj.UseVisualStyleBackColor = true;
-            this.btnVideoIgraDodaj.Click += new System.EventHandler(this.btnVideoIgraDodaj_Click);
             // 
             // btnVideoIgraPretrazi
             // 
-            this.btnVideoIgraPretrazi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnVideoIgraPretrazi.Location = new System.Drawing.Point(255, 7);
+            this.btnVideoIgraPretrazi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnVideoIgraPretrazi.Location = new System.Drawing.Point(111, 7);
             this.btnVideoIgraPretrazi.Name = "btnVideoIgraPretrazi";
             this.btnVideoIgraPretrazi.Size = new System.Drawing.Size(100, 25);
             this.btnVideoIgraPretrazi.TabIndex = 6;
             this.btnVideoIgraPretrazi.Text = "Pretraži";
             this.btnVideoIgraPretrazi.UseVisualStyleBackColor = true;
-            this.btnVideoIgraPretrazi.Click += new System.EventHandler(this.btnVideoIgraPretrazi_Click);
             // 
             // dgvVideoIgre
             // 
@@ -240,7 +236,6 @@
             this.dgvVideoIgre.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVideoIgre.Size = new System.Drawing.Size(570, 326);
             this.dgvVideoIgre.TabIndex = 0;
-            this.dgvVideoIgre.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVideoIgre_CellClick);
             // 
             // tpRezultati
             // 
@@ -256,6 +251,7 @@
             // 
             // pnlButtonsPanelRezultati
             // 
+            this.pnlButtonsPanelRezultati.Controls.Add(this.txtResultsSearch);
             this.pnlButtonsPanelRezultati.Controls.Add(this.btnRezultatIzmeni);
             this.pnlButtonsPanelRezultati.Controls.Add(this.btnRezultatObrisi);
             this.pnlButtonsPanelRezultati.Controls.Add(this.btnRezultatDodaj);
@@ -275,7 +271,6 @@
             this.btnRezultatIzmeni.TabIndex = 11;
             this.btnRezultatIzmeni.Text = "Izmeni";
             this.btnRezultatIzmeni.UseVisualStyleBackColor = true;
-            this.btnRezultatIzmeni.Click += new System.EventHandler(this.btnRezultatIzmeni_Click);
             // 
             // btnRezultatObrisi
             // 
@@ -286,29 +281,26 @@
             this.btnRezultatObrisi.TabIndex = 12;
             this.btnRezultatObrisi.Text = "Obriši";
             this.btnRezultatObrisi.UseVisualStyleBackColor = true;
-            this.btnRezultatObrisi.Click += new System.EventHandler(this.btnRezultatObrisi_Click);
             // 
             // btnRezultatDodaj
             // 
             this.btnRezultatDodaj.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRezultatDodaj.Location = new System.Drawing.Point(150, 7);
+            this.btnRezultatDodaj.Location = new System.Drawing.Point(255, 7);
             this.btnRezultatDodaj.Name = "btnRezultatDodaj";
             this.btnRezultatDodaj.Size = new System.Drawing.Size(100, 25);
             this.btnRezultatDodaj.TabIndex = 9;
             this.btnRezultatDodaj.Text = "Dodaj";
             this.btnRezultatDodaj.UseVisualStyleBackColor = true;
-            this.btnRezultatDodaj.Click += new System.EventHandler(this.btnRezultatDodaj_Click);
             // 
             // btnRezultatPretrazi
             // 
-            this.btnRezultatPretrazi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRezultatPretrazi.Location = new System.Drawing.Point(255, 7);
+            this.btnRezultatPretrazi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnRezultatPretrazi.Location = new System.Drawing.Point(111, 7);
             this.btnRezultatPretrazi.Name = "btnRezultatPretrazi";
             this.btnRezultatPretrazi.Size = new System.Drawing.Size(100, 25);
             this.btnRezultatPretrazi.TabIndex = 10;
             this.btnRezultatPretrazi.Text = "Pretraži";
             this.btnRezultatPretrazi.UseVisualStyleBackColor = true;
-            this.btnRezultatPretrazi.Click += new System.EventHandler(this.btnRezultatPretrazi_Click);
             // 
             // dgvRezultati
             // 
@@ -323,7 +315,27 @@
             this.dgvRezultati.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRezultati.Size = new System.Drawing.Size(570, 326);
             this.dgvRezultati.TabIndex = 0;
-            this.dgvRezultati.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRezultati_CellClick);
+            // 
+            // txtPlayersSearch
+            // 
+            this.txtPlayersSearch.Location = new System.Drawing.Point(5, 8);
+            this.txtPlayersSearch.Name = "txtPlayersSearch";
+            this.txtPlayersSearch.Size = new System.Drawing.Size(100, 22);
+            this.txtPlayersSearch.TabIndex = 5;
+            // 
+            // txtGamesSearch
+            // 
+            this.txtGamesSearch.Location = new System.Drawing.Point(5, 8);
+            this.txtGamesSearch.Name = "txtGamesSearch";
+            this.txtGamesSearch.Size = new System.Drawing.Size(100, 22);
+            this.txtGamesSearch.TabIndex = 9;
+            // 
+            // txtResultsSearch
+            // 
+            this.txtResultsSearch.Location = new System.Drawing.Point(5, 8);
+            this.txtResultsSearch.Name = "txtResultsSearch";
+            this.txtResultsSearch.Size = new System.Drawing.Size(100, 22);
+            this.txtResultsSearch.TabIndex = 13;
             // 
             // frmMain
             // 
@@ -335,16 +347,18 @@
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Speedrun Community";
-            this.Load += new System.EventHandler(this.frmMain_Load);
             this.tcTabs.ResumeLayout(false);
             this.tpIgraci.ResumeLayout(false);
             this.pnlButtonsPanelIgraci.ResumeLayout(false);
+            this.pnlButtonsPanelIgraci.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIgraci)).EndInit();
             this.tpVideoIgre.ResumeLayout(false);
             this.pnlButtonsPanelVideoIgre.ResumeLayout(false);
+            this.pnlButtonsPanelVideoIgre.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVideoIgre)).EndInit();
             this.tpRezultati.ResumeLayout(false);
             this.pnlButtonsPanelRezultati.ResumeLayout(false);
+            this.pnlButtonsPanelRezultati.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRezultati)).EndInit();
             this.ResumeLayout(false);
 
@@ -374,5 +388,8 @@
         private System.Windows.Forms.Button btnRezultatDodaj;
         private System.Windows.Forms.Button btnRezultatPretrazi;
         private System.Windows.Forms.DataGridView dgvRezultati;
+        private System.Windows.Forms.TextBox txtPlayersSearch;
+        private System.Windows.Forms.TextBox txtGamesSearch;
+        private System.Windows.Forms.TextBox txtResultsSearch;
     }
 }

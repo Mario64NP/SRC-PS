@@ -42,11 +42,6 @@ namespace Aplikacija.Forme
             this.btnOK = new System.Windows.Forms.Button();
             this.btnOtkazi = new System.Windows.Forms.Button();
             this.nudVreme = new System.Windows.Forms.NumericUpDown();
-            this.chbVreme = new System.Windows.Forms.CheckBox();
-            this.chbKategorija = new System.Windows.Forms.CheckBox();
-            this.chbVideoIgra = new System.Windows.Forms.CheckBox();
-            this.chbIgrac = new System.Windows.Forms.CheckBox();
-            this.chbDatum = new System.Windows.Forms.CheckBox();
             this.dtpDatum = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.nudVreme)).BeginInit();
             this.SuspendLayout();
@@ -54,7 +49,7 @@ namespace Aplikacija.Forme
             // lblIgrac
             // 
             this.lblIgrac.AutoSize = true;
-            this.lblIgrac.Location = new System.Drawing.Point(40, 30);
+            this.lblIgrac.Location = new System.Drawing.Point(30, 30);
             this.lblIgrac.Name = "lblIgrac";
             this.lblIgrac.Size = new System.Drawing.Size(35, 13);
             this.lblIgrac.TabIndex = 12;
@@ -63,7 +58,7 @@ namespace Aplikacija.Forme
             // lblVideoIgra
             // 
             this.lblVideoIgra.AutoSize = true;
-            this.lblVideoIgra.Location = new System.Drawing.Point(40, 70);
+            this.lblVideoIgra.Location = new System.Drawing.Point(30, 70);
             this.lblVideoIgra.Name = "lblVideoIgra";
             this.lblVideoIgra.Size = new System.Drawing.Size(63, 13);
             this.lblVideoIgra.TabIndex = 13;
@@ -72,7 +67,7 @@ namespace Aplikacija.Forme
             // lblKategorija
             // 
             this.lblKategorija.AutoSize = true;
-            this.lblKategorija.Location = new System.Drawing.Point(40, 110);
+            this.lblKategorija.Location = new System.Drawing.Point(30, 110);
             this.lblKategorija.Name = "lblKategorija";
             this.lblKategorija.Size = new System.Drawing.Size(59, 13);
             this.lblKategorija.TabIndex = 14;
@@ -81,7 +76,7 @@ namespace Aplikacija.Forme
             // lblVreme
             // 
             this.lblVreme.AutoSize = true;
-            this.lblVreme.Location = new System.Drawing.Point(40, 150);
+            this.lblVreme.Location = new System.Drawing.Point(30, 150);
             this.lblVreme.Name = "lblVreme";
             this.lblVreme.Size = new System.Drawing.Size(42, 13);
             this.lblVreme.TabIndex = 15;
@@ -90,7 +85,7 @@ namespace Aplikacija.Forme
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(40, 190);
+            this.label5.Location = new System.Drawing.Point(30, 190);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(44, 13);
             this.label5.TabIndex = 16;
@@ -123,13 +118,13 @@ namespace Aplikacija.Forme
             // 
             // btnOK
             // 
-            this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOK.Location = new System.Drawing.Point(43, 230);
+            this.btnOK.Location = new System.Drawing.Point(33, 230);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 5;
             this.btnOK.Text = "Potvrdi";
             this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btnOtkazi
             // 
@@ -153,71 +148,6 @@ namespace Aplikacija.Forme
             this.nudVreme.Size = new System.Drawing.Size(120, 22);
             this.nudVreme.TabIndex = 3;
             // 
-            // chbVreme
-            // 
-            this.chbVreme.AutoSize = true;
-            this.chbVreme.Checked = true;
-            this.chbVreme.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chbVreme.Location = new System.Drawing.Point(20, 150);
-            this.chbVreme.Name = "chbVreme";
-            this.chbVreme.Size = new System.Drawing.Size(15, 14);
-            this.chbVreme.TabIndex = 10;
-            this.chbVreme.UseVisualStyleBackColor = true;
-            this.chbVreme.Visible = false;
-            this.chbVreme.CheckedChanged += new System.EventHandler(this.chbVreme_CheckedChanged);
-            // 
-            // chbKategorija
-            // 
-            this.chbKategorija.AutoSize = true;
-            this.chbKategorija.Checked = true;
-            this.chbKategorija.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chbKategorija.Location = new System.Drawing.Point(20, 110);
-            this.chbKategorija.Name = "chbKategorija";
-            this.chbKategorija.Size = new System.Drawing.Size(15, 14);
-            this.chbKategorija.TabIndex = 9;
-            this.chbKategorija.UseVisualStyleBackColor = true;
-            this.chbKategorija.Visible = false;
-            this.chbKategorija.CheckedChanged += new System.EventHandler(this.chbKategorija_CheckedChanged);
-            // 
-            // chbVideoIgra
-            // 
-            this.chbVideoIgra.AutoSize = true;
-            this.chbVideoIgra.Checked = true;
-            this.chbVideoIgra.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chbVideoIgra.Location = new System.Drawing.Point(20, 70);
-            this.chbVideoIgra.Name = "chbVideoIgra";
-            this.chbVideoIgra.Size = new System.Drawing.Size(15, 14);
-            this.chbVideoIgra.TabIndex = 8;
-            this.chbVideoIgra.UseVisualStyleBackColor = true;
-            this.chbVideoIgra.Visible = false;
-            this.chbVideoIgra.CheckedChanged += new System.EventHandler(this.chbVideoIgra_CheckedChanged);
-            // 
-            // chbIgrac
-            // 
-            this.chbIgrac.AutoSize = true;
-            this.chbIgrac.Checked = true;
-            this.chbIgrac.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chbIgrac.Location = new System.Drawing.Point(20, 30);
-            this.chbIgrac.Name = "chbIgrac";
-            this.chbIgrac.Size = new System.Drawing.Size(15, 14);
-            this.chbIgrac.TabIndex = 7;
-            this.chbIgrac.UseVisualStyleBackColor = true;
-            this.chbIgrac.Visible = false;
-            this.chbIgrac.CheckedChanged += new System.EventHandler(this.chbIgrac_CheckedChanged);
-            // 
-            // chbDatum
-            // 
-            this.chbDatum.AutoSize = true;
-            this.chbDatum.Checked = true;
-            this.chbDatum.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chbDatum.Location = new System.Drawing.Point(20, 190);
-            this.chbDatum.Name = "chbDatum";
-            this.chbDatum.Size = new System.Drawing.Size(15, 14);
-            this.chbDatum.TabIndex = 11;
-            this.chbDatum.UseVisualStyleBackColor = true;
-            this.chbDatum.Visible = false;
-            this.chbDatum.CheckedChanged += new System.EventHandler(this.chbDatum_CheckedChanged);
-            // 
             // dtpDatum
             // 
             this.dtpDatum.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -234,11 +164,6 @@ namespace Aplikacija.Forme
             this.CancelButton = this.btnOtkazi;
             this.ClientSize = new System.Drawing.Size(274, 281);
             this.Controls.Add(this.dtpDatum);
-            this.Controls.Add(this.chbDatum);
-            this.Controls.Add(this.chbVreme);
-            this.Controls.Add(this.chbKategorija);
-            this.Controls.Add(this.chbVideoIgra);
-            this.Controls.Add(this.chbIgrac);
             this.Controls.Add(this.nudVreme);
             this.Controls.Add(this.btnOtkazi);
             this.Controls.Add(this.btnOK);
@@ -273,11 +198,6 @@ namespace Aplikacija.Forme
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnOtkazi;
         private System.Windows.Forms.NumericUpDown nudVreme;
-        private System.Windows.Forms.CheckBox chbVreme;
-        private System.Windows.Forms.CheckBox chbKategorija;
-        private System.Windows.Forms.CheckBox chbVideoIgra;
-        private System.Windows.Forms.CheckBox chbIgrac;
-        private System.Windows.Forms.CheckBox chbDatum;
         private System.Windows.Forms.DateTimePicker dtpDatum;
     }
 }

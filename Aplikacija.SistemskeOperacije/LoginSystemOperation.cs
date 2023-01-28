@@ -12,7 +12,7 @@ namespace Aplikacija.SistemskeOperacije
 
         protected override void ExecuteSpecificOperation()
         {
-            Result = true; //repository.GetAll(new User()).Contains(user);
+            Result = repository.GetAll(new User()).Contains(user);
         }
     }
 }

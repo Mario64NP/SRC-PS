@@ -70,6 +70,12 @@
     <Compile Include="frmRezultatDetails.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmRezultatDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRezultatDetails.Designer.cs">
+      <DependentUpon>frmRezultatDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmRezultatDetails.Designer.cs">
       <DependentUpon>frmRezultatDetails.cs</DependentUpon>
     </Compile>
@@ -78,6 +84,18 @@
     </Compile>
     <Compile Include="frmVideoIgraDetails.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVideoIgraDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVideoIgraDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVideoIgraDetails.Designer.cs">
+      <DependentUpon>frmVideoIgraDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVideoIgraDetails.Designer.cs">
+      <DependentUpon>frmVideoIgraDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="frmVideoIgraDetails.Designer.cs">
       <DependentUpon>frmVideoIgraDetails.cs</DependentUpon>

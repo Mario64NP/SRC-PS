@@ -19,6 +19,7 @@
         UpdateResult,
         DeleteResult,
         GetPlatforms,
-        GetCategories
+        GetCategories,
+        GetGameCategories
     }
 }

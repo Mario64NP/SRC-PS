@@ -12,8 +12,10 @@ namespace Aplikacija.SistemskeOperacije
         }
         protected override void ExecuteSpecificOperation()
         {
-            repository.Delete(i);
-            Result = true;
+            if (i != null)
+                Result = repository.Delete(i);
+            else
+                Result = false;
         }
     }
 }

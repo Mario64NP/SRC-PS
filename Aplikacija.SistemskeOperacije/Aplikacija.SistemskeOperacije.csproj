@@ -48,6 +48,7 @@
     <Compile Include="DeletePlayerSystemOperation.cs" />
     <Compile Include="DeleteResultSystemOperation.cs" />
     <Compile Include="GetCategoriesSystemOperation.cs" />
+    <Compile Include="GetGameCategoriesSystemOperation.cs" />
     <Compile Include="GetGamesSystemOperation.cs" />
     <Compile Include="GetPlatformsSystemOperation.cs" />
     <Compile Include="GetPlayersSystemOperation.cs" />

@@ -1,6 +1,7 @@
 ﻿using Aplikacija.Domen;
 using Aplikacija.Zajednicko;
 using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
@@ -91,7 +92,7 @@ namespace Aplikacija.Server
                         break;
 
                     case Operation.SearchPlayers:
-                        response.Result = Controller.Instance.SearchPlayers((Igrac)request.Argument);
+                        response.Result = Controller.Instance.SearchPlayers((string)request.Argument);
                         break;
 
                     case Operation.AddPlayer:
@@ -111,15 +112,15 @@ namespace Aplikacija.Server
                         break;
 
                     case Operation.SearchGames:
-                        response.Result = Controller.Instance.SearchGames((VideoIgra)request.Argument);
+                        response.Result = Controller.Instance.SearchGames((string)request.Argument);
                         break;
 
                     case Operation.AddGame:
-                        response.Result = Controller.Instance.AddGame((VideoIgra)request.Argument);
+                        response.Result = Controller.Instance.AddGame(((VideoIgra, List<Kategorija>))request.Argument);
                         break;
 
                     case Operation.UpdateGame:
-                        response.Result = Controller.Instance.UpdateGame((VideoIgra)request.Argument);
+                        response.Result = Controller.Instance.UpdateGame(((VideoIgra, List<Kategorija>))request.Argument);
                         break;
 
                     case Operation.DeleteGame:
@@ -131,7 +132,7 @@ namespace Aplikacija.Server
                         break;
 
                     case Operation.SearchResults:
-                        response.Result = Controller.Instance.SearchResults((Rezultat)request.Argument);
+                        response.Result = Controller.Instance.SearchResults((string)request.Argument);
                         break;
 
                     case Operation.AddResult:
@@ -152,6 +153,10 @@ namespace Aplikacija.Server
 
                     case Operation.GetCategories:
                         response.Result = Controller.Instance.GetCategories();
+                        break;
+
+                    case Operation.GetGameCategories:
+                        response.Result = Controller.Instance.GetGameCategories();
                         break;
 
                     default:

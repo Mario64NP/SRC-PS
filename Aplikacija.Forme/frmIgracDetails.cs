@@ -6,21 +6,21 @@ namespace Aplikacija.Forme
     {
         public string Nadimak { get { return txtNadimak.Text; } set { txtNadimak.Text = value; } }
         public int Starost { get { return (int)nudStarost.Value; } set { nudStarost.Value = value; } }
-        public CheckBox ChbNadimak { get { return chbNadimak; } }
-        public CheckBox ChbStarost { get { return chbStarost; } }
+
         public frmIgracDetails()
         {
             InitializeComponent();
         }
 
-        private void chbNadimak_CheckedChanged(object sender, System.EventArgs e)
+        private void btnOK_Click(object sender, System.EventArgs e)
         {
-            txtNadimak.Enabled = chbNadimak.Checked;
-        }
-
-        private void chbStarost_CheckedChanged(object sender, System.EventArgs e)
-        {
-            nudStarost.Enabled = chbStarost.Checked;
+            if (string.IsNullOrEmpty(txtNadimak.Text))
+            {
+                txtNadimak.BackColor = System.Drawing.Color.Salmon;
+                MessageBox.Show("Nadimak ne može biti prazan!", "Neisravan nadimak", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            DialogResult = DialogResult.OK;
         }
     }
 }

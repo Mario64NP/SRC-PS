@@ -6,20 +6,26 @@ namespace Aplikacija.SistemskeOperacije
 {
     public class SearchPlayersSystemOperation : SystemOperationBase
     {
-        private readonly Igrac i;
+        private readonly string criterion;
 
-        public SearchPlayersSystemOperation(Igrac i)
+        public SearchPlayersSystemOperation(string criterion)
         {
-            this.i = i;
+            this.criterion = criterion.ToLower();
         }
 
         protected override void ExecuteSpecificOperation()
         {
-            List<Igrac> list = repository.GetAll(i).OfType<Igrac>().ToList();
+            List<Igrac> list = repository.GetAll(new Igrac()).OfType<Igrac>().ToList();
 
-            Result = list.Where(ig => 
-                ig.Nadimak.Contains(string.IsNullOrEmpty(i.Nadimak) ? ig.Nadimak : i.Nadimak) &&
-                ig.Starost == ((i.Starost == 0) ? ig.Starost : i.Starost)).ToList();
+            if (string.IsNullOrEmpty(criterion))
+            {
+                Result = list;
+                return;
+            }
+
+            Result = list.Where(i => 
+                i.Nadimak.ToLower().Contains(criterion) ||
+                (int.TryParse(criterion, out int a) && i.Starost == a)).ToList();
         }
     }
 }

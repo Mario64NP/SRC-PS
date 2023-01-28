@@ -6,22 +6,28 @@ namespace Aplikacija.SistemskeOperacije
 {
     public class SearchGamesSystemOperation : SystemOperationBase
     {
-        private readonly VideoIgra v;
+        private readonly string criterion;
 
-        public SearchGamesSystemOperation(VideoIgra v) 
+        public SearchGamesSystemOperation(string criterion) 
         {
-            this.v = v;
+            this.criterion = criterion.ToLower();
         }
 
         protected override void ExecuteSpecificOperation()
         {
-            List<VideoIgra> list = repository.GetAll(v).OfType<VideoIgra>().ToList();
+            List<VideoIgra> list = repository.GetAll(new VideoIgra()).OfType<VideoIgra>().ToList();
 
-            Result = list.Where(vi =>
-                vi.Naziv.Contains(string.IsNullOrEmpty(v.Naziv) ? vi.Naziv : v.Naziv) &&
-                vi.Izdavac.Contains(string.IsNullOrEmpty(v.Izdavac) ? vi.Izdavac : v.Izdavac) &&
-                vi.GodinaIzdanja == ((v.GodinaIzdanja == 0) ? vi.GodinaIzdanja : v.GodinaIzdanja) &&
-                vi.Platforma.Equals(v.Platforma is null ? vi.Platforma : v.Platforma)).ToList();
+            if (string.IsNullOrEmpty(criterion))
+            {
+                Result = list;
+                return;
+            }
+
+            Result = list.Where(v =>
+                v.Naziv.ToLower().Contains(criterion) ||
+                v.Izdavac.ToLower().Contains(criterion) ||
+                (int.TryParse(criterion, out int a) && v.GodinaIzdanja == a) ||
+                v.Platforma.Naziv.ToLower().Contains(criterion)).ToList();
         }
     }
 }

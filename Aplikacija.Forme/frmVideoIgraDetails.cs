@@ -9,35 +9,50 @@ namespace Aplikacija.Forme
         public string Izdavac { get { return txtIzdavac.Text; } set { txtIzdavac.Text = value; } }
         public int GodinaIzdanja { get { return (int)nudGodinaIzdanja.Value; } set { nudGodinaIzdanja.Value = value; } }
         public Platforma Platforma { get { return (Platforma)cmbPlatforma.SelectedItem; } set { cmbPlatforma.SelectedItem = value; } }
+        public ListView LvGameCategories { get => lvGameCategories; }
 
-        public CheckBox ChbNaziv { get { return chbNaziv; } }
-        public CheckBox ChbIzdavac { get { return chbIzdavac; } }
-        public CheckBox ChbGodinaIzdanja { get { return chbGodinaIzdanja; } }
-        public CheckBox ChbPlatforma { get { return chbPlatforma; } }
         public frmVideoIgraDetails()
         {
             InitializeComponent();
             cmbPlatforma.DataSource = GUIController.Instance.GetPlatforms();
+
+            FillListViewCategories();
         }
 
-        private void chbNaziv_CheckedChanged(object sender, System.EventArgs e)
+        private void FillListViewCategories()
         {
-            txtNaziv.Enabled = chbNaziv.Checked;
+            foreach (Kategorija k in GUIController.Instance.GetCategories())
+                lvGameCategories.Items.Add(new ListViewItem(new string[] { k.Naziv, k.Opis}) { Name = k.Naziv});
         }
 
-        private void chbIzdavac_CheckedChanged(object sender, System.EventArgs e)
+        private void btnOK_Click(object sender, System.EventArgs e)
         {
-            txtIzdavac.Enabled = chbIzdavac.Checked;
-        }
+            if (string.IsNullOrEmpty(txtNaziv.Text))
+            {
+                txtNaziv.BackColor = System.Drawing.Color.Salmon;
+                MessageBox.Show("Naziv ne može biti prazan!", "Neisravan naziv", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (string.IsNullOrEmpty(txtIzdavac.Text))
+            {
+                txtIzdavac.BackColor = System.Drawing.Color.Salmon;
+                MessageBox.Show("Izdavač ne može biti prazan!", "Neisravan izdavač", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (cmbPlatforma.SelectedItem is null)
+            {
+                cmbPlatforma.BackColor = System.Drawing.Color.Salmon;
+                MessageBox.Show("Platforma ne može biti prazna!", "Neisravna platforma", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (lvGameCategories.SelectedItems.Count == 0)
+            {
+                lvGameCategories.BackColor = System.Drawing.Color.Salmon;
+                MessageBox.Show("Izaberite bar jednu kategoriju!", "Neisravne kategorije", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-        private void chbGodinaIzdanja_CheckedChanged(object sender, System.EventArgs e)
-        {
-            nudGodinaIzdanja.Enabled = chbGodinaIzdanja.Checked;
-        }
-
-        private void chbPlatforma_CheckedChanged(object sender, System.EventArgs e)
-        {
-            cmbPlatforma.Enabled = chbPlatforma.Checked;
+            DialogResult = DialogResult.OK;
         }
     }
 }

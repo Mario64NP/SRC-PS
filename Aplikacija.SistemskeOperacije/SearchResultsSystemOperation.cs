@@ -1,5 +1,4 @@
 ﻿using Aplikacija.Domen;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -7,23 +6,28 @@ namespace Aplikacija.SistemskeOperacije
 {
     public class SearchResultsSystemOperation : SystemOperationBase
     {
-        private readonly Rezultat r;
+        private readonly string criterion;
 
-        public SearchResultsSystemOperation(Rezultat r)
+        public SearchResultsSystemOperation(string criterion)
         {
-            this.r = r;
+            this.criterion = criterion.ToLower();
         }
 
         protected override void ExecuteSpecificOperation()
         {
-            List<Rezultat> list = repository.GetAll(r).OfType<Rezultat>().ToList();
+            List<Rezultat> list = repository.GetAll(new Rezultat()).OfType<Rezultat>().ToList();
 
-            Result = list.Where(re =>
-                re.Igrac.Equals(r.Igrac is null ? re.Igrac : r.Igrac) &&
-                re.VideoIgra.Equals(r.VideoIgra is null ? re.VideoIgra : r.VideoIgra) &&
-                re.Kategorija.Equals(r.Kategorija is null ? re.Kategorija : r.Kategorija) &&
-                re.Vreme == ((r.Vreme == 0) ? re.Vreme : r.Vreme) &&
-                re.Datum == ((r.Datum == DateTime.MinValue) ? re.Datum : r.Datum)).ToList();
+            if (string.IsNullOrEmpty(criterion))
+            {
+                Result = list;
+                return;
+            }
+
+            Result = list.Where(r =>
+                r.Igrac.Nadimak.ToLower().Contains(criterion) ||
+                r.VideoIgra.Naziv.ToLower().Contains(criterion) ||
+                r.Kategorija.Naziv.ToLower().Contains(criterion) ||
+                (int.TryParse(criterion, out int a) && r.Vreme == a)).ToList();
         }
     }
 }

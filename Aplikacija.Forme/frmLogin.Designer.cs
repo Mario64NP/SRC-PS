@@ -40,7 +40,7 @@
             // 
             this.txtUsername.Location = new System.Drawing.Point(130, 27);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(100, 20);
+            this.txtUsername.Size = new System.Drawing.Size(100, 22);
             this.txtUsername.TabIndex = 0;
             // 
             // txtPassword
@@ -57,7 +57,7 @@
             this.lblUsername.AutoSize = true;
             this.lblUsername.Location = new System.Drawing.Point(30, 30);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(58, 13);
+            this.lblUsername.Size = new System.Drawing.Size(61, 13);
             this.lblUsername.TabIndex = 3;
             this.lblUsername.Text = "Username:";
             // 
@@ -66,26 +66,25 @@
             this.lblPassword.AutoSize = true;
             this.lblPassword.Location = new System.Drawing.Point(30, 80);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(56, 13);
+            this.lblPassword.Size = new System.Drawing.Size(59, 13);
             this.lblPassword.TabIndex = 4;
             this.lblPassword.Text = "Password:";
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(105, 130);
+            this.btnLogin.Location = new System.Drawing.Point(95, 130);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 25);
             this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // frmLogin
             // 
             this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 181);
+            this.ClientSize = new System.Drawing.Size(264, 176);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUsername);

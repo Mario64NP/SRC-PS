@@ -37,9 +37,9 @@ namespace Aplikacija.Server
             return (List<Igrac>)so.Result;
         }
 
-        public List<Igrac> SearchPlayers(Igrac i)
+        public List<Igrac> SearchPlayers(string criterion)
         {
-            SearchPlayersSystemOperation so = new SearchPlayersSystemOperation(i);
+            SearchPlayersSystemOperation so = new SearchPlayersSystemOperation(criterion);
             so.Execute();
             return (List<Igrac>)so.Result;
         }
@@ -72,21 +72,21 @@ namespace Aplikacija.Server
             return (List<VideoIgra>)so.Result;
         }
 
-        public List<VideoIgra> SearchGames(VideoIgra v)
+        public List<VideoIgra> SearchGames(string criterion)
         {
-            SearchGamesSystemOperation so = new SearchGamesSystemOperation(v);
+            SearchGamesSystemOperation so = new SearchGamesSystemOperation(criterion);
             so.Execute();
             return (List<VideoIgra>)so.Result;
         }
 
-        public bool AddGame(VideoIgra v)
+        public bool AddGame((VideoIgra, List<Kategorija>) v)
         {
             AddGameSystemOperation so = new AddGameSystemOperation(v);
             so.Execute();
             return (bool)so.Result;
         }
 
-        public bool UpdateGame(VideoIgra v)
+        public bool UpdateGame((VideoIgra, List<Kategorija>) v)
         {
             UpdateGameSystemOperation so = new UpdateGameSystemOperation(v);
             so.Execute();
@@ -107,9 +107,9 @@ namespace Aplikacija.Server
             return (List<Rezultat>)so.Result;
         }
 
-        public List<Rezultat> SearchResults(Rezultat r)
+        public List<Rezultat> SearchResults(string criterion)
         {
-            SearchResultsSystemOperation so = new SearchResultsSystemOperation(r);
+            SearchResultsSystemOperation so = new SearchResultsSystemOperation(criterion);
             so.Execute();
             return (List<Rezultat>)so.Result;
         }
@@ -147,6 +147,13 @@ namespace Aplikacija.Server
             GetCategoriesSystemOperation so = new GetCategoriesSystemOperation();
             so.Execute();
             return (List<Kategorija>)so.Result;
+        }
+
+        public List<KategorijaIgre> GetGameCategories()
+        {
+            GetGameCategoriesSystemOperation so = new GetGameCategoriesSystemOperation();
+            so.Execute();
+            return (List<KategorijaIgre>)so.Result;
         }
     }
 }

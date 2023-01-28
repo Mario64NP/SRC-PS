@@ -6,6 +6,14 @@ namespace Aplikacija.Repozitorijum
 {
     public class GenericDbRepository : IDbRepository<IEntity>
     {
+        public bool Add(IEntity entity, out int outid)
+        {
+            SqlCommand cmd = DbConnectionFactory.Instance.GetDbConnection()
+                .CreateCommand($"INSERT INTO {entity.TableName} OUTPUT INSERTED.ID VALUES ({entity.InsertValues})");
+            outid = (int)cmd.ExecuteScalar();
+            return outid > 0;
+        }
+
         public bool Add(IEntity entity)
         {
             SqlCommand cmd = DbConnectionFactory.Instance.GetDbConnection()
@@ -40,7 +48,6 @@ namespace Aplikacija.Repozitorijum
             
             return result;
         }
-
 
         public void Commit()
         {

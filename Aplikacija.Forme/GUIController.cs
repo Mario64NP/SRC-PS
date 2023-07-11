@@ -152,10 +152,10 @@ namespace Aplikacija.Forme
                 if (AddPlayer(i))
                 {
                     RefreshDgvPlayers();
-                    MessageBox.Show("Sistem je zapamtio igrača.");
+                    MessageBox.Show("Sistem je zapamtio igrača.", "Dodavanje igrača", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
-                    MessageBox.Show("Sistem ne može da zapamti igrača.");
+                    MessageBox.Show("Sistem ne može da zapamti igrača.", "Dodavanje igrača", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -165,7 +165,7 @@ namespace Aplikacija.Forme
             if (result.Count > 0)
                 frmMain.DgvIgraci.DataSource = result;
             else
-                MessageBox.Show("Sistem ne može da pronađe igrače po zadatoj vrednosti.");
+                MessageBox.Show("Sistem ne može da pronađe igrače po zadatoj vrednosti.", "Pretraga igrača", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void btnIgracIzmeni_Click(object sender, EventArgs e)
@@ -187,10 +187,10 @@ namespace Aplikacija.Forme
                 {
                     RefreshDgvPlayers();
                     RefreshDgvResults();
-                    MessageBox.Show("Sistem je zapamtio igrača.");
+                    MessageBox.Show("Sistem je zapamtio igrača.", "Izmena igrača", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
-                    MessageBox.Show("Sistem ne može da zapamti igrača.");
+                    MessageBox.Show("Sistem ne može da zapamti igrača.", "Izmena igrača", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -206,10 +206,10 @@ namespace Aplikacija.Forme
                 frmMain.BtnIgracIzmeni.Enabled = false;
                 frmMain.BtnIgracObrisi.Enabled = false;
 
-                MessageBox.Show("Sistem je obrisao igrača.");
+                MessageBox.Show("Sistem je obrisao igrača.", "Brisanje igrača", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
-                MessageBox.Show("Sistem ne može da obriše igrača.");
+                MessageBox.Show("Sistem ne može da obriše igrača.", "Brisanje igrača", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void btnVideoIgraDodaj_Click(object sender, EventArgs e)
@@ -234,10 +234,10 @@ namespace Aplikacija.Forme
                 if (AddGame(v, k))
                 {
                     RefreshDgvGames();
-                    MessageBox.Show("Sistem je zapamtio video igru.");
+                    MessageBox.Show("Sistem je zapamtio video igru.", "Dodavanje video igre", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
-                    MessageBox.Show("Sistem ne može da zapamti video igru.");
+                    MessageBox.Show("Sistem ne može da zapamti video igru.", "Dodavanje video igre", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -247,7 +247,7 @@ namespace Aplikacija.Forme
             if (result.Count > 0)
                 frmMain.DgvVideoIgre.DataSource = result;
             else
-                MessageBox.Show("Sistem ne može da pronađe video igre po zadatoj vrednosti.");
+                MessageBox.Show("Sistem ne može da pronađe video igre po zadatoj vrednosti.", "Pretraga video igara", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void btnVideoIgraIzmeni_Click(object sender, EventArgs e)
@@ -278,10 +278,10 @@ namespace Aplikacija.Forme
                 {
                     RefreshDgvGames();
                     RefreshDgvResults();
-                    MessageBox.Show("Sistem je zapamtio video igru.");
+                    MessageBox.Show("Sistem je zapamtio video igru.", "Izmena video igre", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
-                    MessageBox.Show("Sistem ne može da zapamti video igru.");
+                    MessageBox.Show("Sistem ne može da zapamti video igru.", "Izmena video igre", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -297,10 +297,10 @@ namespace Aplikacija.Forme
                 frmMain.BtnVideoIgraIzmeni.Enabled = false;
                 frmMain.BtnVideoIgraObrisi.Enabled = false;
 
-                MessageBox.Show("Sistem je obrisao video igru.");
+                MessageBox.Show("Sistem je obrisao video igru.", "Brisanje video igre", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
-                MessageBox.Show("Sistem ne može da obriše video igru.");
+                MessageBox.Show("Sistem ne može da obriše video igru.", "Brisanje video igre", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void btnRezultatDodaj_Click(object sender, EventArgs e)
@@ -321,10 +321,10 @@ namespace Aplikacija.Forme
                 if (AddResult(r))
                 {
                     RefreshDgvResults();
-                    MessageBox.Show("Sistem je zapamtio rezultat.");
+                    MessageBox.Show("Sistem je zapamtio rezultat.", "Dodavanje rezultata", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
-                    MessageBox.Show("Sistem ne može da zapamti rezultat.");
+                    MessageBox.Show("Sistem ne može da zapamti rezultat.", "Dodavanje rezultata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -334,7 +334,7 @@ namespace Aplikacija.Forme
             if (result.Count > 0)
                 frmMain.DgvRezultati.DataSource = result;
             else
-                MessageBox.Show("Sistem ne može da pronađe video igre po zadatoj vrednosti.");
+                MessageBox.Show("Sistem ne može da pronađe rezultate po zadatoj vrednosti.", "Pretraga rezultata", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void btnRezultatIzmeni_Click(object sender, EventArgs e)
@@ -361,10 +361,10 @@ namespace Aplikacija.Forme
                 if (UpdateResult(r))
                 {
                     RefreshDgvResults();
-                    MessageBox.Show("Sistem je zapamtio rezultat.");
+                    MessageBox.Show("Sistem je zapamtio rezultat.", "Izmena rezultata", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
-                    MessageBox.Show("Sistem ne može da zapamti rezultat.");
+                    MessageBox.Show("Sistem ne može da zapamti rezultat.", "Izmena rezultata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -378,10 +378,10 @@ namespace Aplikacija.Forme
                 frmMain.BtnRezultatIzmeni.Enabled = false;
                 frmMain.BtnRezultatObrisi.Enabled = false;
 
-                MessageBox.Show("Sistem je obrisao rezultat.");
+                MessageBox.Show("Sistem je obrisao rezultat.", "Brisanje rezultata", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
-                MessageBox.Show("Sistem ne može da obriše rezultat.");
+                MessageBox.Show("Sistem ne može da obriše rezultat.", "Brisanje rezultata", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void dgvIgraci_CellClick(object sender, DataGridViewCellEventArgs e)

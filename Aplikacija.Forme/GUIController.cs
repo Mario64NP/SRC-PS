@@ -258,6 +258,18 @@ namespace Aplikacija.Forme
             frm.Izdavac = selectedVideoIgra.Izdavac;
             frm.GodinaIzdanja = selectedVideoIgra.GodinaIzdanja;
             frm.Platforma = selectedVideoIgra.Platforma;
+
+            List<KategorijaIgre> gc = GetGameCategories();
+            foreach (KategorijaIgre k in gc)
+            {
+                if (k.VideoIgraID == selectedVideoIgra.VideoIgraID)
+                {
+                    frm.LvGameCategories.Items[k.KategorijaID-2].Focused = true;
+                    frm.LvGameCategories.Items[k.KategorijaID-2].Selected = true;
+                }
+            }
+            frm.LvGameCategories.Select();
+
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 VideoIgra v = new VideoIgra
